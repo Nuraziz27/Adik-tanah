@@ -1,0 +1,345 @@
+/* ===== VARIABLES & RESET ===== */
+:root {
+  --bpn-blue: #0047ab;
+  --bpn-blue-dark: #003580;
+  --bpn-yellow: #ffd700;
+  --bpn-yellow-dark: #e6c200;
+  --bpn-gray: #f8f9fa;
+  --bpn-text: #333333;
+  --bpn-text-light: #6c757d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--bpn-text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 700;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .display-4 {
+    font-size: 3.5rem;
+  }
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* ===== HEADER STYLES ===== */
+.bpn-header {
+  background-color: var(--bpn-blue);
+  color: white;
+  padding: 15px 0;
+  border-bottom: 4px solid var(--bpn-yellow);
+  position: relative;
+  z-index: 1000;
+}
+
+.bpn-logo {
+  height: 60px;
+  transition: transform 0.3s;
+}
+
+.bpn-logo:hover {
+  transform: scale(1.05);
+}
+
+/* ===== NAVIGATION ===== */
+.bpn-nav {
+  background-color: var(--bpn-gray);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.bpn-nav-link {
+  color: var(--bpn-blue) !important;
+  font-weight: 500;
+  padding: 15px 20px !important;
+  position: relative;
+}
+
+.bpn-nav-link:hover,
+.bpn-nav-link.active {
+  color: var(--bpn-blue-dark) !important;
+}
+
+.bpn-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background-color: var(--bpn-yellow);
+}
+
+/* ===== HERO SECTION ===== */
+.bpn-hero {
+  background: linear-gradient(rgba(0, 71, 171, 0.85), rgba(0, 71, 171, 0.85)),
+    url('https://www.atrbpn.go.id/Resource/Image/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+}
+
+.bpn-hero::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: url('https://www.atrbpn.go.id/Resource/Image/wave-divider.png') repeat-x;
+}
+
+.bpn-hero .form-control {
+  padding: 15px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+}
+
+.bpn-hero .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+/* ===== CARD STYLES ===== */
+.bpn-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bpn-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bpn-card-icon {
+  font-size: 2.5rem;
+  color: var(--bpn-blue);
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+}
+
+.bpn-card:hover .bpn-card-icon {
+  transform: scale(1.2);
+  color: var(--bpn-blue-dark);
+}
+
+.bpn-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bpn-card .btn {
+  align-self: center;
+  margin-top: auto;
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn-warning {
+  background-color: var(--bpn-yellow);
+  color: var(--bpn-blue);
+  font-weight: 600;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: var(--bpn-yellow-dark);
+  color: var(--bpn-blue-dark);
+}
+
+.login-btn {
+  background-color: var(--bpn-yellow);
+  color: var(--bpn-blue);
+  font-weight: 600;
+  padding: 8px 20px;
+}
+
+.login-btn:hover {
+  background-color: var(--bpn-yellow-dark);
+}
+
+/* ===== NEWS SECTION ===== */
+.news-card {
+  transition: all 0.3s;
+}
+
+.news-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.news-card .card-title {
+  color: var(--bpn-blue);
+}
+
+.list-group-item-action:hover {
+  background-color: rgba(0, 71, 171, 0.05);
+}
+
+/* ===== FOOTER STYLES ===== */
+.bpn-footer {
+  background-color: var(--bpn-blue);
+  color: white;
+  padding: 60px 0 30px;
+  position: relative;
+}
+
+.bpn-footer::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: url('https://www.atrbpn.go.id/Resource/Image/wave-divider.png') repeat-x;
+  transform: rotate(180deg);
+}
+
+.bpn-footer h5 {
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.bpn-footer h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--bpn-yellow);
+}
+
+.bpn-footer a {
+  color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.bpn-footer a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.social-icon:hover {
+  background-color: var(--bpn-yellow);
+  color: var(--bpn-blue) !important;
+  transform: translateY(-5px);
+}
+
+/* ===== UTILITY CLASSES ===== */
+.rounded-top-left-0 {
+  border-top-left-radius: 0 !important;
+}
+
+.rounded-top-right-0 {
+  border-top-right-radius: 0 !important;
+}
+
+.z-1000 {
+  z-index: 1000;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 767.98px) {
+  .bpn-hero {
+    padding: 60px 0;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+  
+  .bpn-nav-link {
+    padding: 10px 15px !important;
+  }
+  
+  .bpn-footer {
+    text-align: center;
+  }
+  
+  .bpn-footer h5::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
